@@ -1,0 +1,21 @@
+services:
+
+  postgres:
+    image: postgres:16-alpine
+    container_name: pageturn-db
+    environment:
+      POSTGRES_DB: pageturn
+      POSTGRES_USER: pageturn
+      POSTGRES_PASSWORD: pageturn_dev
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U pageturn -d pageturn"]
+      interval: 5s
+      timeout: 5s
+      retries: 3
+
+volumes:
+  pgdata:
