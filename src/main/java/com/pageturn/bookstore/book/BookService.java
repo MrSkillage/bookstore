@@ -1,6 +1,7 @@
 package com.pageturn.bookstore.book;
 
 import com.pageturn.bookstore.book.dto.BookResponse;
+import com.pageturn.bookstore.book.dto.BookSearchCriteria;
 import com.pageturn.bookstore.common.exception.ResourceNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -19,6 +20,12 @@ public class BookService {
 
     public Page<BookResponse> getAllBooks(Pageable pageable) {
         return bookRepository.findAll(pageable)
+                .map(this::toResponse);
+    }
+
+    public Page<BookResponse> searchBooks(BookSearchCriteria criteria, Pageable pageable) {
+        var spec = BookSpecification.fromCriteria(criteria);
+        return bookRepository.findAll(spec, pageable)
                 .map(this::toResponse);
     }
 
