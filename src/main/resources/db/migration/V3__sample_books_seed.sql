@@ -28,4 +28,4 @@ INSERT INTO books (isbn, title, author, genre, description, price, stock_quantit
  'A dystopian social science fiction novel and cautionary tale about the dangers of totalitarianism.', 9.99, 60, '1949-06-08'),
 
 ('978-0-06-112008-4', 'To Kill a Mockingbird', 'Harper Lee', 'FICTION',
- 'The unforgettable novel of a childhood in a sleepy Southern town and the crisis of conscience that rocked it.', 11.99, 25, '1960-07-11'),
+ 'The unforgettable novel of a childhood in a sleepy Southern town and the crisis of conscience that rocked it.', 11.99, 25, '1960-07-11')

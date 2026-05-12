@@ -9,6 +9,6 @@ CREATE TABLE books (
     stock_quantity INTEGER NOT NULL DEFAULT 0,
     published_date DATE,
     created_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT now(),
-    update_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT now()
+    updated_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT now()
 );
 
