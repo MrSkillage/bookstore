@@ -43,6 +43,7 @@ public class BookController {
             @RequestParam(required = false) BigDecimal maxPrice,
             @RequestParam(required = false) Boolean inStock,
             @PageableDefault(size = 10, sort = "title") Pageable pageable) {
+
         var criteria = new BookSearchCriteria(title, author, genre, minPrice, maxPrice, inStock);
         return ResponseEntity.ok(bookService.searchBooks(criteria, pageable));
     }
